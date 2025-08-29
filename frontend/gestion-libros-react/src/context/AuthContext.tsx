@@ -29,12 +29,14 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         if (user === "gtpanteraxtr@gmail.com" && password === "12345") {
             setUserLoggedIn(true);
             localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userEmail', user);
         }
     };
 
     const logout = () => {
         setUserLoggedIn(false);
-        localStorage.removeItem('isLoggedIn');    
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('userEmail');    
     };
 
     return (
