@@ -1,39 +1,41 @@
 import { createContext, useState } from 'react';
 
 interface AuthContext {
-  userLoggedIn: boolean;
-  login: (user: string, password: string) => void;
-  logout: () => void;
+    userLoggedIn: boolean;
+    login: (user: string, password: string) => void;
+    logout: () => void;
 } 
 
 // Context for authentication state
 const defaultValues: AuthContext = { 
-  userLoggedIn: false,
-  login: () => {},
-  logout: () => {},
+    userLoggedIn: false,
+    login: () => {},
+    logout: () => {},
 };
 
 export const AuthContext = createContext<AuthContext>(defaultValues);
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
+    const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
 
-  const login = (user: string, password: string) => {
-    // Simulate login logic
-    if (user === "gtpanteraxtr@gmail.com" && password === "12345") {
-      setUserLoggedIn(true);
-    }
-  };
+    const login = (user: string, password: string) => {
+        // Simulate login logic
+        if (user === "gtpanteraxtr@gmail.com" && password === "12345") {
+            setUserLoggedIn(true);
+            localStorage.setItem('isLoggedIn', 'true');
+        }
+    };
 
-  const logout = () => {
-    setUserLoggedIn(false);
-  };
+    const logout = () => {
+        setUserLoggedIn(false);
+        localStorage.removeItem('isLoggedIn');    
+    };
 
-  return (
-    <AuthContext.Provider value={{ userLoggedIn, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
+    return (
+        <AuthContext.Provider value={{ userLoggedIn, login, logout }}>
+        {children}
+        </AuthContext.Provider>
+    );
 }
 
 export default AuthProvider;
