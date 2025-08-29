@@ -12,3 +12,10 @@
   margin: 0 0 20px;
   font-size: 1.6em;
 }
+
+.header h6 {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #61dafb;
+}
