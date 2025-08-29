@@ -18,6 +18,12 @@ export const AuthContext = createContext<AuthContext>(defaultValues);
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
 
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        if (!userLoggedIn) {
+            setUserLoggedIn(true);
+        }
+    }
+
     const login = (user: string, password: string) => {
         // Simulate login logic
         if (user === "gtpanteraxtr@gmail.com" && password === "12345") {

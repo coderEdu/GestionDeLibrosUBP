@@ -26,7 +26,7 @@ function App() {
       <Header />
       <Navbar session={session} misLibros={myBooks} />
       <main>
-        {/* <SmallBook /> */}
+        {/* <SmallBook /> */}   
         <div>
           {!userLoggedIn && !btnSessPressed ? <SmallBook /> : null}
           {!userLoggedIn && btnSessPressed ? <Login /> : null}
