@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # REQUERIMIENTOS
 
 # String o cadena de conexion a la base de datos
-DB_URL = "postgresql://postgres:gtm/775rf@localhost:5432/libreria"
+DB_URL = "postgresql://postgres:admin@localhost:5432/libreria"
 
 # Crear un motor de base de datos
 engine = create_engine(DB_URL)

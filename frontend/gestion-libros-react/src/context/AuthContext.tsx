@@ -20,7 +20,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const login = (user: string, password: string) => {
     // Simulate login logic
-    if (user === "educoder78@gmail.com" && password === "12345") {
+    if (user === "gtpanteraxtr@gmail.com" && password === "12345") {
       setUserLoggedIn(true);
     }
   };
